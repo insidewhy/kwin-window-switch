@@ -1,9 +1,9 @@
 # Installation
 
 ```bash
-git clone https://github.com/ohjames/kwin-window-switch
+git clone https://github.com/insidewhy/kwin-window-switch
 cd kwin-window-switch
-plasmapkg2 -t kwinscript -i .
+make install
 ```
 
 ## Motivation

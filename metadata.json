@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "KWin/Script",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "github@chilon.net",
+                "Name": "James Pike"
+            }
+        ],
+        "Description": "Adds shortcuts for changing the active window",
+        "Icon": "preferences-system-windows-script-test",
+        "Id": "windowswitch",
+        "License": "GPL",
+        "Name": "WindowSwitch",
+        "Version": "1.0"
+    },
+    "X-KDE-PluginKeyword": "windowswitch",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
