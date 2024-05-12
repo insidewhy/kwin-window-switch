@@ -3,6 +3,8 @@
 ```bash
 git clone https://github.com/insidewhy/kwin-window-switch
 cd kwin-window-switch
+# if on plasma5 run this:
+# git checkout plasma5
 make install
 ```
 

@@ -1,19 +1,21 @@
 function selectNextWindow(direction) {
-  // TODO: change to windowList() for plasma6
-  const clientList = workspace.clientList()
+  const windowList = workspace.windowList()
   const desktop = workspace.currentDesktop
   let nextIdx = -1
   let hasActive = false
 
-  const startPoint = direction === 1 ? 0 : clientList.length - 1
-  for (let i = startPoint; (i < clientList.length && i >= 0); i += direction) {
-    const client = clientList[i]
-    if (client.active) {
+  const startPoint = direction === 1 ? 0 : windowList.length - 1
+  for (let i = startPoint; (i < windowList.length && i >= 0); i += direction) {
+    const win = windowList[i]
+    if (win.desktopWindow) {
+      continue
+    }
+    if (win.active) {
       hasActive = true
       continue
     }
 
-    if (client.desktop === desktop) {
+    if (win.desktops.includes(desktop)) {
       if (hasActive) {
         nextIdx = i
         break
@@ -26,8 +28,7 @@ function selectNextWindow(direction) {
   }
 
   if (nextIdx !== -1) {
-    // TODO: change to activeWindow for plasma6
-    workspace.activeClient = clientList[nextIdx]
+    workspace.activeWindow = windowList[nextIdx]
   }
 }
 
